@@ -2,6 +2,8 @@ package estudantes.entidades;
 
 import professor.entidades.CodigoCurso;
 
+import java.util.Objects;
+
 public class Portaria extends Norma{
     private int anoInicio;
 
@@ -31,4 +33,10 @@ public class Portaria extends Norma{
         Portaria objCasted = (Portaria) obj;
         return this.getAnoInicio() == objCasted.getAnoInicio();
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getAnoInicio());
+    }
+
 }

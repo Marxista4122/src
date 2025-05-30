@@ -3,6 +3,7 @@ package estudantes.entidades;
 import professor.entidades.CodigoCurso;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public abstract class  Deliberacao extends DocumentoAdministrativo{
     private String texto;
@@ -28,5 +29,10 @@ public abstract class  Deliberacao extends DocumentoAdministrativo{
         Deliberacao objCasted = (Deliberacao) obj;
 
         return texto.equals(objCasted.getTexto());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getTexto());
     }
 }

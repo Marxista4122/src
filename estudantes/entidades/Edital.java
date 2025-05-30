@@ -3,6 +3,7 @@ package estudantes.entidades;
 import professor.entidades.CodigoCurso;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Edital extends Norma{
     private String[] responsaveis;
@@ -29,5 +30,10 @@ public class Edital extends Norma{
         Edital objCasted = (Edital) obj;
 
         return Arrays.equals(responsaveis, objCasted.getResponsaveis());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), Arrays.hashCode(getResponsaveis()));
     }
 }

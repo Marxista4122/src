@@ -2,6 +2,7 @@ package estudantes.entidades;
 
 import professor.entidades.CodigoCurso;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Historico extends Registro {
 
@@ -36,4 +37,8 @@ public class Historico extends Registro {
 
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getCoeficiente(), Arrays.hashCode(getComponentes()));
+    }
 }

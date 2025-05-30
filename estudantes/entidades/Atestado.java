@@ -39,4 +39,8 @@ public class Atestado extends Registro
 
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getDescricao(), getCategoria());
+    }
 }

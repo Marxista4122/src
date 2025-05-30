@@ -3,6 +3,7 @@ package estudantes.entidades;
 import professor.entidades.CodigoCurso;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 
 public class Ata extends Documento {
@@ -49,4 +50,8 @@ public class Ata extends Documento {
                     Arrays.equals(presentes, objCasted.getPresentes());
         }
 
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), getNumero(), getTexto(), Arrays.hashCode(getPresentes()));
+        }
 }

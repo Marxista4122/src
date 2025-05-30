@@ -31,5 +31,9 @@ public class Diploma extends Certificado {
         return Objects.equals(habilitacao, converted.habilitacao);
 
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getHabilitacao());
+    }
 
 }

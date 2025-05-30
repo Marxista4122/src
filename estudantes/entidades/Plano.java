@@ -38,5 +38,10 @@ public class Plano extends DocumentoAcademico{
         return Objects.equals(responsavel, converted.responsavel) && Arrays.equals(planejamento, converted.planejamento);
 
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getResponsavel(), Arrays.hashCode(getPlanejamento()));
+    }
+
     
 }

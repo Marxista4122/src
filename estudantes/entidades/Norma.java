@@ -48,4 +48,8 @@ public class Norma extends DocumentoAdministrativo{
         return getNumero() == norma.getNumero() && isValido() == norma.isValido() && Objects.equals(getTexto(), norma.getTexto());
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getNumero(), isValido(), getTexto());
+    }
 }
