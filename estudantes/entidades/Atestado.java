@@ -11,7 +11,7 @@ public class Atestado extends Registro
     private String categoria;
 
     public Atestado(String criadorDoc, CodigoCurso codigoCursoDoc, int paginasDoc, long autenticacao, long matricula, String estudante, String descricao, String categoria) {
-        super(criadorDoc, codigoCursoDoc, paginasDoc, autenticacao, matricula, estudante);
+        super(criadorDoc, codigoCursoDoc, paginasDoc, autenticacao, estudante, matricula);
         this.descricao = descricao;
         this.categoria = categoria;
     }

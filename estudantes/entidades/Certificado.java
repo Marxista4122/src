@@ -8,8 +8,8 @@ public class Certificado extends Registro {
 
     private String descricao;
 
-    public Certificado(String criadorDoc, CodigoCurso codigoCursoDoc, int paginasDoc, long autenticacao, long matricula, String estudante, String descricao) {
-        super(criadorDoc, codigoCursoDoc, paginasDoc, autenticacao, matricula, estudante);
+    public Certificado(String criadorDoc, CodigoCurso codigoCursoDoc, int paginasDoc, long autenticacao, String estudante, long matricula, String descricao) {
+        super(criadorDoc, codigoCursoDoc, paginasDoc, autenticacao, estudante, matricula);
         this.descricao = descricao;
     }
 

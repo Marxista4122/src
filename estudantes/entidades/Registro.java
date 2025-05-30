@@ -10,7 +10,7 @@ public abstract class Registro extends DocumentoAcademico {
     private String estudante;
 
 
-    public Registro(String criadorDoc, CodigoCurso codigoCursoDoc, int paginasDoc, long autenticacao, long matricula, String estudante) {
+    public Registro(String criadorDoc, CodigoCurso codigoCursoDoc, int paginasDoc, long autenticacao, String estudante, long matricula) {
         super(criadorDoc, codigoCursoDoc, paginasDoc, autenticacao);
         this.matricula = matricula;
         this.estudante = estudante;

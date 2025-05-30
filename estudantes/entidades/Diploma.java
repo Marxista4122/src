@@ -9,7 +9,7 @@ public class Diploma extends Certificado {
 
     public Diploma(String criadorDoc, CodigoCurso codigoCursoDoc, int paginasDoc, long autenticacao, long matricula,
             String estudante, String descricao, String habilitacao) {
-        super(criadorDoc, codigoCursoDoc, paginasDoc, autenticacao, matricula, estudante, descricao);
+        super(criadorDoc, codigoCursoDoc, paginasDoc, autenticacao, estudante, matricula, descricao);
         this.habilitacao = habilitacao;
     }
     

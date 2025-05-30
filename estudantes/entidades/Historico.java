@@ -10,7 +10,7 @@ public class Historico extends Registro {
     private String[] componentes;
 
     public Historico(String criadorDoc, CodigoCurso codigoCursoDoc, int paginasDoc, long autenticacao, long matricula, String estudante, double coeficiente, String[] componentes)  {
-        super(criadorDoc, codigoCursoDoc, paginasDoc, autenticacao, matricula, estudante);
+        super(criadorDoc, codigoCursoDoc, paginasDoc, autenticacao, estudante, matricula);
         this.coeficiente = coeficiente;
         this.componentes = componentes;
     }
