@@ -20,7 +20,7 @@ public class Norma extends DocumentoAdministrativo{
         return numero;
     }
 
-    public boolean isValido() {
+    public boolean getValido() {
         return valido;
     }
 
@@ -45,11 +45,11 @@ public class Norma extends DocumentoAdministrativo{
             return false;
         }
         Norma norma = (Norma) obj;
-        return getNumero() == norma.getNumero() && isValido() == norma.isValido() && Objects.equals(getTexto(), norma.getTexto());
+        return getNumero() == norma.getNumero() && getValido() == norma.getValido() && Objects.equals(getTexto(), norma.getTexto());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getNumero(), isValido(), getTexto());
+        return Objects.hash(super.hashCode(), getNumero(), getValido(), getTexto());
     }
 }

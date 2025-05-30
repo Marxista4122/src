@@ -6,20 +6,20 @@ import java.util.Objects;
 
 public class Oficio extends Deliberacao {
 
-    private String destinario;
+    private String destinatario;
 
 
     public Oficio(String criadorDoc, CodigoCurso codigoCursoDoc, int paginasDoc, String textoDeliberacao, String destinarioOficio) {
         super(criadorDoc, codigoCursoDoc, paginasDoc, textoDeliberacao);
-        destinario = destinarioOficio;
+        destinatario = destinarioOficio;
     }
 
-    public String getDestinario() {
-        return destinario;
+    public String getDestinatario() {
+        return destinatario;
     }
 
     public void setDestinario(String destinario) {
-        this.destinario = destinario;
+        this.destinatario = destinario;
     }
 
     @Override
@@ -42,12 +42,12 @@ public class Oficio extends Deliberacao {
 
         Oficio objCasado = (Oficio) obj;
 
-        return destinario.equals(objCasado.getDestinario());
+        return destinatario.equals(objCasado.getDestinatario());
 
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getDestinario());
+        return Objects.hash(super.hashCode(), getDestinatario());
     }
 }

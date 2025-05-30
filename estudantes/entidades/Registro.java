@@ -6,8 +6,8 @@ import java.util.Objects;
 
 public abstract class Registro extends DocumentoAcademico {
 
-    private long matricula;
     private String estudante;
+    private long matricula;
 
 
     public Registro(String criadorDoc, CodigoCurso codigoCursoDoc, int paginasDoc, long autenticacao, String estudante, long matricula) {
