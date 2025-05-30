@@ -64,8 +64,48 @@ public class Burocrata {
      * @see professor.entidades.Universidade#removerDocumentoDoMonteDoCurso(estudantes.entidades.Documento, professor.entidades.CodigoCurso)
      * @see professor.entidades.Universidade#devolverDocumentoParaMonteDoCurso(estudantes.entidades.Documento, professor.entidades.CodigoCurso) 
      */
-    public void trabalhar(){
+    public void trabalhar()
+    {
+  Documento[] MonteAtual = null;
+        CodigoCurso codigoCursoEscolhido = null;
+
+        //Percorrendo até encontrar um curso com documentos 
+        for (CodigoCurso curso : CodigoCurso.values()){
+            MonteAtual = universidade.pegarCopiaDoMonteDoCurso(curso);
+            if(MonteAtual.length == 0){
+                continue;
+            }
+            codigoCursoEscolhido = curso;
+            break;
+        }
+
+        if(MonteAtual == null) return;
         
+        Documento documentoEscolhido = MonteAtual[0];
+        Processo processo = mesa.getProcesso(1);
+
+        if(documentoEscolhido.getClass() == Edital.class || documentoEscolhido.getClass() == Portaria.class)
+        {
+            if (documentoEscolhido.getPaginas() > 100)
+            {
+                processo = mesa.getProcesso(2);
+            }
+            return;
+        }
+        else if(documentoEscolhido.getClass() == Ata.class)
+        {
+            Documento[] documentosProcesso = processo.pegarCopiaDoProcesso();
+            if((documentosProcesso[0].getCodigoCurso().ordinal() <= 6 && documentoEscolhido.getCodigoCurso().ordinal() > 6) || (documentosProcesso[0].getCodigoCurso().ordinal() > 6 && documentoEscolhido.getCodigoCurso().ordinal() <= 6 ))
+            {
+                
+            }
+            universidade.removerDocumentoDoMonteDoCurso(documentoEscolhido, codigoCursoEscolhido);
+            return;
+        }
+
+        processo.adicionarDocumento(documentoEscolhido);
+        universidade.despachar(processo);
+        universidade.removerDocumentoDoMonteDoCurso(documentoEscolhido, codigoCursoEscolhido);
     }
     
     /**
