@@ -27,7 +27,7 @@ public class Certificado extends Registro {
 
         Certificado cursed = (Certificado) obj;
 
-        return descricao.equals(cursed.getDescricao());}
+        return Objects.equals(descricao, cursed.descricao); }
 
     @Override
     public int hashCode() {
